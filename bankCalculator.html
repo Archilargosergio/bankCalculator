@@ -26,29 +26,32 @@
         GERMAN DEPRECIATION METHOD</h1>
    </header>
     <main>
-       <section>
+       <form class="form-container" action="/">
         <div class="box-container">
             <label for="amount"></label>
-            <input type="number" id="amount">
+            <input type="number" id="amount" placeholder="USD">
 
             <label for="time"></label>
-            <input type="number" id="number">
+            <input type="number" id="time" placeholder="Vaue in months">
 
             <label for="interest"></label>
-            <input type="number" id="interest">
+            <input type="number" id="interest" placeholder="%">
 
         </div>
 
-            <div class="alert-box" hidden>
-                <p> You must fill in all the requested information! </p>
+            <div class="alert-box" hidden id="alertText">
+             You must fill in all the requested information!
             </div>
 
           <div class="button-container">
-            <button type="submit"></button>
+            <button type="submit" onclick="calcularAmortizacion()"></button>
             <button type="reset"></button>
           </div>
-
-          <table id="table-list">
+        
+        </form>
+          <section>
+          
+            <table id="table-list">
             <thead>
                 <tr>
                     <th>Period time</th>
@@ -68,5 +71,7 @@
             <img src="./Icons/smart_toy_FILL0_wght400_GRAD0_opsz48.png" alt="">
             Project made by Sergio Archila @Archilargosergio </p>
     </footer>
+
+    <script src="./bankCalculator.js"></script>
 </body>
 </html>
