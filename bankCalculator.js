@@ -1,9 +1,43 @@
 const amount = document.getElementById("amount");
 const time = document.getElementById("time");
-const interest = document.getElementById("interes");
+const interest = document.getElementById("interest");
 const alertText = document.getElementById("alertText");
-const tableBody = document.getElementById("table-list tbody");
+const tableBody = document.querySelector("#table-list tbody");
 
+
+function calcularInteres(monto, interes, tiempo){
+    while(tableBody.firstChild){
+        tableBody.removeChild(tableBody.firstChild);
+    }
+    
+    let fechas = [];
+    let fechaActual = Date.now();
+    let mes_actual = moment(fechaActual);
+    mes_actual = mes_actual.add(1, "month");
+
+    let amortizacionConstante, pagoInteres, cuota;
+    amortizacionConstante = monto / tiempo;
+    for (let i = 1 ; i <= tiempo; i++){
+        pagoInteres = monto * (interes / 100);
+        cuota = amortizacionConstante + pagoInteres;
+        monto = monto - amortizacionConstante;
+        
+        //Date format
+        fechas[i] = mes_actual.format("DD-MM-YYYY");
+        mes_actual = mes_actual.add(1, "month");
+        
+        const row = document.createElement('tr');
+        row.innerHTML = ` 
+        <td>${fechas[i]}</td>
+        <td>${amortizacionConstante.toFixed(2)}</td>
+        <td>${pagoInteres.toFixed(2)}</td>
+        <td>${cuota.toFixed(2)}</td>
+        <td>${monto.toFixed(2)}</td>
+    `;
+
+        tableBody.appendChild(row);
+    }
+}
 function calcularAmortizacion(){
     const amountText = amount.value;
     const timeText = time.value;
@@ -14,10 +48,7 @@ function calcularAmortizacion(){
         setTimeout(()=> {
             alertText.hidden = true;}, 200)
     }
-    if (interestText === "Compuesto"){
-        return calcularInteresCompuesto(amountText, timeText, interestText);
-    }
-    if (interestText === "Simple"){
-        return calcularInteresSimple(amountText, timeText, interestText);
+    else {
+        return calcularInteres(amountText, interestText, timeText);
     }
 }
