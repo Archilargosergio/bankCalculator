@@ -8,7 +8,7 @@
 --white: #ffffff;
 --sm: 15px;
 --md: 20px;
---lg: 50px;
+--lg: 40px;
 }
 body{
     margin: 0;
@@ -17,16 +17,17 @@ body{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 nav{
-    margin: 0%;
+    margin: 0;
     width: 100%;
-    height: 100hv;
-}
-.nav-general{
-    list-style: none;
-    width: 100%;
+    height: auto;
     display: flex;
     justify-content: flex-start;
-    padding-right: 50px;
+}
+.nav-general{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
 }
 .nav-general li a {
     display: block;
@@ -58,3 +59,63 @@ nav{
     background-color: #000000;
     text-decoration: none;
 }
+header {
+    margin: 0;
+    width: 100%;
+    height: auto;
+    display: grid;
+    place-content: center;
+}
+header h1{
+    font-size: var(--lg);
+    color: var(--brown);
+}
+header h1 img{
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+    border: 5px;
+}
+main {
+    display: grid;
+    margin-top: 20px;
+    grid-template-rows: 1fr auto;
+    place-content: center;
+    gap: 20px;
+}
+.box-container {
+    width: 700px;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.box-container label{
+    font-size: var(--md);
+    font-weight: bold;
+    color: var(--brown-dark);
+}
+.box-container input{
+    height: 25px;
+    border-radius: 18px;
+    border-style: none;
+    background-color: var(--blue-clair);
+    text-align: center;
+}
+.alert-box{
+    margin: 20px;
+    width: auto;
+    height: 40px;
+    place-content: center;
+    background-color: antiquewhite;
+    border-radius: 20px;
+    border-style: none;
+}
+.alert-box p{
+    font-size: var(--md);
+    font-weight: bold;
+    color: red;
+    text-align: center;
+    padding-top: 5px;
+}
+
+

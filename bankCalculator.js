@@ -46,7 +46,7 @@ function calcularAmortizacion(){
     if(amountText === "" || timeText === "" || interestText === ""){
         alertText.hidden = false;
         setTimeout(()=> {
-            alertText.hidden = true;}, 200)
+            alertText.hidden = true;}, 2000)
     }
     else {
         return calcularInteres(amountText, interestText, timeText);
