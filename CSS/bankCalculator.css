@@ -1,0 +1,60 @@
+:root{
+--brown-dark : #330913;
+--brown : #772226;
+--blue-regular : #6ca1e4;
+--blue-clair : #dae1ed;
+--blue-light : #f8efed;
+--black: #000000;
+--white: #ffffff;
+--sm: 15px;
+--md: 20px;
+--lg: 50px;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: var(--blue-light);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+nav{
+    margin: 0%;
+    width: 100%;
+    height: 100hv;
+}
+.nav-general{
+    list-style: none;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    padding-right: 50px;
+}
+.nav-general li a {
+    display: block;
+    padding: 10px 20px;
+    list-style: none;
+}
+.nav-general li a img{
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+}
+.nav-general li a img:hover{
+    background-color: var(--brown);
+    cursor: pointer;
+}
+.nav-vertical {
+    display: none;
+    position: absolute;
+    width: 200px;
+    list-style: none;
+    border-radius: 18px;
+}
+.nav-general li:hover .nav-vertical{
+    display: block;
+}
+.nav-vertical li a{
+    color: var(--white);
+    padding: 10px;
+    background-color: #000000;
+    text-decoration: none;
+}
