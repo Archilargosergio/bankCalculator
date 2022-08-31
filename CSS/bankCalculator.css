@@ -221,6 +221,7 @@ footer p a{
     color: var(--brown-dark);
     font-weight: bold;
     cursor: pointer;
+    text-decoration: none;
 }
 footer p a:hover{
     transform: scale(1.1);
