@@ -17,54 +17,55 @@ body{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 nav{
-    margin: 0;
-    width: 100%;
-    height: auto;
     display: grid;
     justify-self: flex-start;
+    width: 100%;
+    height: 100hv;
 }
 .nav-general{
-    margin: 0;
+    margin: 10px;
     padding: 0;
-    list-style: none;
     width: 3%;
     height: auto;
-}
-.nav-general li a {
-    display: block;
-    padding: 10px 20px;
+} 
+.nav-general li{
     list-style: none;
+}
+.nav-general li a{
+    display: block;
 }
 .nav-general li a img{
     width: 30px;
     height: 30px;
-    object-fit: cover;
 }
 .nav-general li a img:hover{
     background-color: var(--brown);
-    cursor: pointer;
 }
-.nav-vertical {
+.nav-vertical{
+    padding: 9px;
     display: none;
     position: absolute;
     width: 200px;
-    list-style: none;
+    background-color: var(--brown-dark);
+    border-radius: 20px;
 }
-
-.nav-general li:hover .nav-vertical{
-    display: block;
-}
-.nav-vertical a:hover{
-    background-color: var(--blue-regular);
-    color: var(--black);
-    transform: scale(1.1);
-    transition-duration: 0.5s;
+.nav-vertical li{
+    width: auto;
+    height: auto;
+    text-align: start;
 }
 .nav-vertical li a{
     color: var(--white);
-    padding: 10px;
-    background-color: #000000;
     text-decoration: none;
+    list-style: none;
+    margin: 0;
+}
+.nav-general li a:hover{
+    background-color: var(--brown);
+    border-radius: 5px;
+}
+.nav-general li:hover .nav-vertical{
+    display: block;
 }
 header {
     margin: 0;
